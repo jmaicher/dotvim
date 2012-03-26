@@ -1,7 +1,10 @@
 " setup pathogen (https://github.com/tpope/vim-pathogen)
 call pathogen#infect()
 
-" colors
+" general settings
 syntax enable
+set number
+
+" colors
 set background=dark
 colorscheme jellybeans
