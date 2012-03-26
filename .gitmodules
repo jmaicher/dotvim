@@ -11,3 +11,6 @@
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
 	ignore = dirty
+[submodule "bundle/delmitmate"]
+	path = bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
