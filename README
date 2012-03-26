@@ -5,3 +5,6 @@ Installation:
 
 # create symlinks
 > ln -s ~/.vim/.vimrc ~/.vimrc
+
+# init/update git submodules
+> git submodule init && git submodule update
