@@ -1,18 +1,46 @@
+" ########################
+" ## .vimrc by jmaicher ##
+" ########################
+
 " setup pathogen (https://github.com/tpope/vim-pathogen)
 call pathogen#infect()
 call pathogen#helptags()
 
-" keybindings
-nnoremap <silent> <C-t> :CommandT<CR>
-nnoremap <silent> <C-b> :CommandTBuffer<CR>
+" ######################
+" ## General settings ##
+" ######################
 
-" general settings
-syntax enable
-set number
-
-" colors
 set background=dark
+syntax enable			" activate syntax highlighting
 colorscheme solarized
 
-" bugfixes
-set backspace=2 " make backspace work like in most other apps
+set number			" show line numbers
+set hidden			" allows vim to use buffers effectively
+set encoding=utf-8
+set history=1000		" allows to store more than 20 of the last commands/search patterns
+
+set wildmenu			" show alternatives when using <tab> in command line
+set wildmode=list:longest	" .. and let it behave like autocompletion in the shell
+
+set ignorecase 			" ignore case when searching
+set smartcase			" .. but when query contains uppercase letter don't
+
+set scrolloff=3			" show more context when scrolling
+set ruler			" show ruler in status bar
+
+set hlsearch 			" highlight search terms
+set incsearch			" ..dynamically as they are typed.
+
+set visualbell			" tells vim not beep around
+
+filetype plugin indent on	" detect filetypes automatically
+set backspace=indent,eol,start	" intuitive backspacing
+
+" ##################
+" ## Key mappings ##
+" ##################
+
+let mapleader = ","
+" Command-T plugin
+nnoremap <silent> <C-t> :CommandT<CR>
+nnoremap <silent> <C-b> :CommandTBuffer<CR>
