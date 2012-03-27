@@ -53,3 +53,5 @@ nnoremap <silent> <C-b> :CommandTBuffer<CR>
 " open NERDTree automatically when vim starts up if no file
 " has been specified
 autocmd vimenter * if !argc() | NERDTree | endif
+" close vim when NERDTree is the only window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
