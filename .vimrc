@@ -44,3 +44,12 @@ let mapleader = ","
 " Command-T plugin
 nnoremap <silent> <C-t> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
+
+
+" ##############
+" ## NERDTree ##
+" ##############
+
+" open NERDTree automatically when vim starts up if no file
+" has been specified
+autocmd vimenter * if !argc() | NERDTree | endif
