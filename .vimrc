@@ -36,6 +36,10 @@ set visualbell			" tells vim not beep around
 filetype plugin indent on	" detect filetypes automatically
 set backspace=indent,eol,start	" intuitive backspacing
 
+set tabstop=2			" use two columns/spaces tab
+set shiftwidth=2
+set expandtab			" convert tabstop when pressing tab in insert mode
+
 " ##################
 " ## Key mappings ##
 " ##################
