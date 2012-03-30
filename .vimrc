@@ -40,7 +40,6 @@ set tabstop=2			      " use two columns/spaces tab
 set shiftwidth=2
 set expandtab			      " convert tabstop when pressing tab in insert mode
 
-set autochdir           " always switch to the current file directory
 set backup              " make backup files
 set backupdir=~/.vim-tmp/backup   " centralize backup files..
 set directory=~/.vim-tmp/swp      " ..and swp files in ~/.vim-tmp
