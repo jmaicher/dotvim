@@ -12,7 +12,7 @@ call pathogen#helptags()
 
 set background=dark
 syntax enable			      " activate syntax highlighting
-colorscheme solarized
+colorscheme Tomorrow-Night-Bright
 
 set number			        " show line numbers
 set hidden			        " allows vim to use buffers effectively
@@ -63,3 +63,15 @@ nnoremap <silent> <C-b> :CommandTBuffer<CR>
 autocmd vimenter * if !argc() | NERDTree | endif
 " close vim when NERDTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" #############
+" ## Helpers ##
+" #############
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+ if !exists("*synstack")
+   return
+ endif
+ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
+endfunc
