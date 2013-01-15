@@ -12,10 +12,13 @@ call pathogen#helptags()
 
 set background=dark
 syntax enable			      " activate syntax highlighting
-colorscheme Tomorrow-Night-Bright
+colorscheme solarized
+"colorscheme Tomorrow-Night-Bright
 
 set number			        " show line numbers
+set cursorline          " highlight current line
 set hidden			        " allows vim to use buffers effectively
+set nowrap              " no soft wraps
 set encoding=utf-8
 set history=1000		    " allows to store more than 20 of the last commands/search patterns
 
@@ -52,7 +55,11 @@ let mapleader = ","
 " Command-T plugin
 nnoremap <silent> <C-t> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+map <leader>r :execute 'CommandTFlush'<CR>
+nnoremap <silent> <C-w>s :w<CR>
 
+inoremap <Nul> <C-n>
 
 " ##############
 " ## NERDTree ##
