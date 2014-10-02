@@ -11,9 +11,8 @@ call pathogen#helptags()
 " ######################
 
 set background=dark
-syntax enable			      " activate syntax highlighting
-colorscheme solarized
-"colorscheme Tomorrow-Night-Bright
+syntax on			      " activate syntax highlighting
+colorscheme Tomorrow-Night-Bright
 
 set number			        " show line numbers
 set cursorline          " highlight current line
@@ -47,6 +46,14 @@ set backup              " make backup files
 set backupdir=~/.vim-tmp/backup   " centralize backup files..
 set directory=~/.vim-tmp/swp      " ..and swp files in ~/.vim-tmp
 
+" Command-T settings
+set wildignore=node_modules,.git,bower_components
+
+" Allow project-specific configuration
+set exrc      " enable per-directory .vimrc files
+set secure    " disable unsafe commands in local .vimrc files
+
+
 " ##################
 " ## Key mappings ##
 " ##################
@@ -55,8 +62,9 @@ let mapleader = ","
 " Command-T plugin
 nnoremap <silent> <C-t> :CommandT<CR>
 nnoremap <silent> <C-b> :CommandTBuffer<CR>
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :execute 'CommandTFlush'<CR>
+
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 nnoremap <silent> <C-w>s :w<CR>
 
 inoremap <Nul> <C-n>
@@ -82,3 +90,4 @@ function! <SID>SynStack()
  endif
  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val,"name")')
 endfunc
+
